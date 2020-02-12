@@ -17,7 +17,7 @@ TAIL_BITS_APPENDED = 6 #bits
 
 #Here all of the standards are used
 standards = ["802.11a", "802.11g", "802.11n", "802.11ac_w1", "802.11ac_w2", "802.11ax"]
-#The protocol needing to be used
+#The protocol needing to be usedgi
 protocol = ["TCP", "UDP"]
 
 #create a dictionary out of the information whereby the data rates are stored in one array and in the other array we have the NBits info etc
@@ -42,7 +42,7 @@ data_rates_n_ac = {"Data Rates" : [96.3, 86.7, 72.2, 65, 57.8, 43.3, 28.9, 21.7,
                    }
 
 max_rates_n_ac = {"Data Rates": [6933.6, 866.7, 3466.4, 433.3, 1600, 200, 577.8, 96.3, 600, 150, 288.8, 72.2],
-                  "Data Rate's Data": [8, 5/6, 468, 3.6],
+                  "Data Rate's Data": [[8, 5/6, 468, 3.6],
                                       [8, 5/6, 468, 3.6],
                                       [8, 5/6, 234, 3.6],
                                       [8, 5/6, 234, 3.6],
@@ -53,9 +53,8 @@ max_rates_n_ac = {"Data Rates": [6933.6, 866.7, 3466.4, 433.3, 1600, 200, 577.8,
                                       [6, 5/6, 108, 3.6],
                                       [6, 5/6, 108, 3.6],
                                       [6, 5/6, 52, 3.6],
-                                      [6, 5/6, 52, 3.6],}
-
-
+                                      [6, 5/6, 52, 3.6]]
+                  }
 
 data_rates_ag = {"Data Rates" : [54,48,36,4,18,12,9,6],
                  "Data Rate's Data": [[6, 3/4, 48, 4],
@@ -84,13 +83,6 @@ data_rates_ax = {"Data Rates" : [9608, 6768.4, 5764.8, 3459.2, 1729.6, 576.8, 11
                                      [2, 3/4, 234, 13.6],
                                      [1, 1/2, 234, 13.6]]
                  }
-
-
-
-
-
-
-"
 #SIFS in micro seconds
 #MAC Headers in bytes
 #Preamble is in microseconds

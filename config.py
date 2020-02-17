@@ -1,18 +1,3 @@
-global PACKET_SIZE  #bytes
-global SNAP_LLC #bytes
-global SLOT_TIME #microseconds
-global TCP_ACK_SIZE #bytes
-global RTS_SIZE #bytes
-global CTS_SIZE #bytes
-global TAIL_BITS_APPENDED #bits
-
-PACKET_SIZE = 1500 #bytes
-SNAP_LLC = 8 #bytes
-SLOT_TIME = 9 #microseconds
-TCP_ACK_SIZE = 40 #bytes
-RTS_SIZE = 20 #bytes
-CTS_SIZE = 14 #bytes
-TAIL_BITS_APPENDED = 6 #bits
 
 
 #Here all of the standards are used
@@ -95,4 +80,5 @@ standards_info = {
     "802.11g" : {"MAC Header" : 34, "SIFS" : 10, "Preamble" : 46},
     "802.11a" : {"MAC Header" : 34, "SIFS" : 16, "Preamble" : 46},
 }
+
 #I need to take account for the slot time, DIFS, MAC header, preamble, signal extension, ACK length,

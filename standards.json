@@ -1,7 +1,7 @@
 {
   "protocols" : ["TCP", "UDP"],
   "standards" :
-  [{"802.11a" : [{
+  [{"802.11a" : {
     "Data Rates" : [54,48,36,4,18,12,9,6],
     "Data Rate Encoding Data" : [[6, 0.75, 48, 4],
                                 [6, 0.666, 48, 4],
@@ -13,8 +13,8 @@
     "MAC Header" : 34,
     "SIFS" : 16,
     "Preamble" : 20
-  }],
-    "802.11g" : [{
+  },
+    "802.11g" : {
       "Data Rates" : [54,48,36,4,18,12,9,6],
       "Data Rate Encoding Data" : [[6, 0.75, 48, 4],
                                 [6, 0.666, 48, 4],
@@ -27,8 +27,8 @@
       "SIFS" : 10,
       "Preamble" : 46,
       "Signal Extension" : 6
-    }],
-    "802.11n" : [{
+    },
+    "802.11n" : {
       "Data Rates" : [96.3, 86.7, 72.2, 65, 57.8, 43.3, 28.9, 21.7, 14.4, 7.2],
       "Data Rate Encoding Data": [[8, 0.8333, 52, 3.6],
                                   [8, 0.75, 52, 3.6],
@@ -56,7 +56,7 @@
       "MAC Header" : 40,
       "SIFS" : 16,
       "Preamble" : 46
-    }],
+    },
     "802.11ac_w1" : [{
 
     }],

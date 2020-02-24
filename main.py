@@ -48,8 +48,6 @@ def main():
         list(config.standards[chosen_standard]["Data Rates"]).index(chosen_data_rate)]
     MAC_header = config.standards[chosen_standard]["MAC Header"]
     SIFS = config.standards[chosen_standard]["SIFS"]
-    Preamble = config.standards[chosen_standard]["Preamble"]
-    print(chosen_standard)
     if str(chosen_standard).split('\n')[0] == "802.11g":
         signal_extension = 6
     else:
@@ -65,11 +63,23 @@ def main():
     CRate = chosen_data_rate_info[1]
     NChan = chosen_data_rate_info[2]
     SDur = chosen_data_rate_info[3]
+    Nss = chosen_data_rate_info[4]
+    #IF the Nss is greater than 1, choose the larger preamble
+    if Nss > 1:
+        Preamble = config.standards[chosen_standard]["Preamble"][1]
+    #If Preamble array is greater than 1, choose the first for Nss = 1
+    elif len(config.standards[chosen_standard]["Preamble"]) > 1:
+        Preamble = config.standards[chosen_standard]["Preamble"][0]
+    #Just choose the valye
+    else:
+        Preamble = config.standards[chosen_standard]["Preamble"]
+
     DIFS = (2 * SLOT_TIME) + SIFS
 
+
+    #TODO implement the normal case and max case
     # FIXME should be multiplied by Nss once we have concluded what the answer to that is
-    bits_per_ofdm_symbol = NBits * CRate * NChan
-    print(ceil(((RTS_SIZE * 8) + 6) / bits_per_ofdm_symbol), SDur)
+    bits_per_ofdm_symbol = (NBits * CRate * NChan) * Nss
     total_packet_size = PACKET_SIZE + MAC_header + SNAP_LLC  # bytes
 
     # at the data rate, I can see how many bits are encoded by one symbol
@@ -78,7 +88,6 @@ def main():
     Data_Frame_Dur = ceil(((total_packet_size * 8) + 6) / bits_per_ofdm_symbol) * SDur + signal_extension
     ACK_Dur = ceil(((14 * 8) + 6) / bits_per_ofdm_symbol) * SDur + signal_extension
     TCP_ACK_Dur = ceil((((TCP_ACK_SIZE + MAC_header + SNAP_LLC) * 8) + 6) / bits_per_ofdm_symbol) * SDur + signal_extension
-    print(RTS_Dur, CTS_Dur, Data_Frame_Dur, ACK_Dur, TCP_ACK_Dur)
 
     transmission_dur = DIFS + Preamble + RTS_Dur + SIFS + Preamble + CTS_Dur + SIFS + Preamble + Data_Frame_Dur + SIFS + Preamble + ACK_Dur
     if chosen_protocol == "TCP":

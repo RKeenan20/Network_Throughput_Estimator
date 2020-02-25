@@ -8,7 +8,7 @@ def print_dict(dict, value_1):
     #This is for selecting a 802.11 standard
     if value_1 is None:
         for i, value in enumerate(dict.keys()):
-            print(i+1, value)
+            print(str(i + 1) + ": " + str(value))
     #This is for data rates
     else:
         for i, value in enumerate(value_1["Data Rates"]):

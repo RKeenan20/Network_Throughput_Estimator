@@ -81,7 +81,8 @@ def main():
             signal_extension = 0
 
         #Calculation of bits per OFDM symbol
-        bits_per_ofdm_symbol = (NBits * CRate * NChan) * Nss
+        bits_per_ofdm_symbol = int((NBits * CRate * NChan) * Nss)
+
         #Data Packet size in bytes
         total_packet_size = PACKET_SIZE + MAC_header + SNAP_LLC  # bytes
 

@@ -63,7 +63,7 @@ devices interfering nearby and random noise in the channel but this does not app
 ### 802.11 performance improves after each release. Briefly discuss the trade-offs involved in such improvements. 
 Some of the improvements in 802.11 standards over recent years are higher reliability, larger bandwidths and more channels to transfer data on as well as supporting MIMO and MU-MIMO (Multi user MIMO).
 There have also been improvements to support both 2.4GHz and 5GHz in terms of WLAN frequency. The tradeoffs for these improvements mainly lie in the range and coverage of the improving standards 
-which are in turn influenced by the transmit power as more power is needed to be used to transmit at the much higher rates advertised. This obviously means that such Access Points or Wirless devices 
+which are in turn influenced by the transmit power as more power is needed to be used to transmit at the much higher rates advertised. This obviously means that such Access Points or Wireless devices 
 must either be connected to a Mains power connection or have a very large battery to be used. As the standards have improved and such improvements such as 802.11n to 802.11ac with MIMO to MU-MIMO,
 the channels suffer from interference and noise from adjacent channels and co-channels between multiple users. 
 This means that thought and care must be taken when locating cells or APs so as to not cause large amounts of interference. 

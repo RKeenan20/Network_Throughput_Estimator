@@ -1,3 +1,15 @@
+##
+#   This file is used fr the configurations of each data rate.
+#   The protocols in terms of TCP and UDP are defined as an array.
+#   The 802.11 standards are defined as nested dictionaries where the "standards" dictionary's keys are the standards themselves
+#   followed by their Data Rates, the data of each individual data rate, their MAC Header, SIFS, Preamble, Max Nss and Max NChan
+##
+
+
+
+#FIXME perhaps look at changing the dictionaries to
+# 802.11a :{ 54: { Nbits : 1, Crate : 2 etc etc
+#The protocols to choose from
 protocol = ["TCP", "UDP"]
 #Data is in the format of NBits, CRate, NChan, SDur, Nss
 standards = {

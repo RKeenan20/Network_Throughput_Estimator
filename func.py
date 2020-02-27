@@ -9,7 +9,7 @@ def print_dict(dict, value_1):
     if value_1 is None:
         for i, value in enumerate(dict.keys()):
             print(str(i + 1) + ": " + str(value))
-    #This is for data rates
+    #This is for standard's data rates
     else:
         for i, value in enumerate(value_1["Data Rates"]):
             print(str(i + 1) + ": " + str(value) + " Mbps")

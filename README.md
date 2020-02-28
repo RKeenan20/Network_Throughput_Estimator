@@ -13,7 +13,7 @@ which will be referred to as the "Normal" case and then the "Best" case for this
 #### Design 
 The project is laid out in a structure making use of 3 Python files, this README as well as some screenshots of the terminal readouts from the screen to the user.
 I tried to make the main.py file as clear as possible. More functions could have been used to calculate different values such as the transmission time but
-I felt for this assignment it would be easier to leave out that layer of abstraction and clearly show in main() method how different quantities are calculated. 
+I felt for this assignment it would be easier to leave out that layer of abstraction and clearly show in the main() method how different quantities are calculated. 
 The 3 Python files are described below (config.py, main.py, func.py)
 
 - **main.py** is the main Python file which handles the function calls to user I/O functions, the calculation of transmission duration/eventual 
@@ -38,7 +38,7 @@ followed by pressing "Enter".
 - The result will be printed to the screen for the throughput (for 1500 byte Data packet) and the time taken to transfer 10GB of data for both
 the "Normal" case and the "Best" case. 
 
-The case shown below is for TCP, 802.11ax and a 143.4 Mbps data rate. 
+The case shown below is for UDP, 802.11ax and a 143.4 Mbps data rate. 
 
 ![](terminal1.png)
 ![](terminal2.png)
@@ -46,17 +46,17 @@ The case shown below is for TCP, 802.11ax and a 143.4 Mbps data rate.
 
 
 ### Why is there a difference between the actual throughput and the advertised data rate?
-The answer to this question lies with the amount of overhead required to send a simple 1500 byte data packet at an given advertised data rate.
+The answer to this question lies with the amount of overhead required to send a simple 1500 byte data packet at a given advertised data rate.
 For each advertised data rate, the number of bits per OFDM symbol, number of channels and bits all change thus representing a different result every time between seemingly very close data rates.
 We can also see the amount of overhead or extra items needing to be transmitted with the data packet such as CTS, RTS, ACKs and Preambles. We also have to take account for all of the delays 
 placed in the channel such as DIFS, SIFS and in the case of 802.11g, a signal extension. Encapsulating the data frame with a MAC Header and SNAP LLC headers also adds to the total transmission time as well as OFDM tail bits. 
 
 In the case of TCP, you are transmitting a lot more overhead and data as you need a whole data stream for the TCP ACK and you can also not transmit again until the
 TCP ACK has been received and acknowledged. This obviously results in a lower throughput than the advertised data rate. We can actually increase the data packet size also and this will result in a decrease in the amount of overhead required. 
-Another case is with the improving standards, each duration in terms of symbol duration and number of bits per symbol (NBits * CRate * NChan * Nss) has risen as seen by the calculations in the notes. Using a small data frame 
-of only 1500 bytes affects the throughput as there is so much more time/overhead required to send a small 1500 byte packet. Each item for calculating the transmission duration rises through the more recent 
+Another case is with the improving standards, each duration in terms of symbol duration and number of bits per symbol (NBits * CRate * NChan * Nss) has increased as seen by the calculations in the notes. Using a small data frame 
+of only 1500 bytes affects the throughput as there is so much more time/overhead required to send a small 1500 byte packet. Each item for calculating the transmission duration increases through the more recent 
 standards, hence the quite poor performance. 
-This is seen by rates such as the one above where the advertised rate at 802.11ax is 143.4Mbps but we are only achieving 23.33Mbps. 
+This is seen by results such as the one above where the advertised rate at 802.11ax is 143.4Mbps but we are only achieving 23.33Mbps. 
 
 ### 802.11 performance improves after each release. Briefly discuss the trade-offs involved in such improvements. 
 Some of the improvements in 802.11 standards over recent years are higher reliability, larger bandwidths and more channels to transfer data on as well as supporting MIMO and MU-MIMO (Multi user MIMO).

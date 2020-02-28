@@ -30,7 +30,7 @@ a specifically setup configuration file and all of the program's source code sho
 so the information can be easily accessed using a number of Python methods. 
 
 #### Usage
-First of all, if you press "RUN" on your IDE such as Pycharm or run via the command line using `python3 main.py` you should be prompted with the following read-outs to the terminal:
+First of all, if you press "RUN" on your IDE such as Pycharm in main.py or run via the command line using `python3 main.py` you should be prompted with the following read-outs to the terminal:
 -  You will first be prompted to enter a number stating your choice of protocol of either TCP or UDP (1 or 2)
 followed by pressing "Enter". 
 - Then choose a relevant 802.11 standard from the list shown on the screen (e.g., 1 : 802.11a) by entering a relevant numerical choice and pressing "Enter".

@@ -96,10 +96,10 @@ def main():
             print("-----------------------------------------------------------------------------------")
             print("The results for the best case for " + str(chosen_standard) + " of " + str(Nss) + " spatial streams"
                   + "(Nss) are given below")
-            print("-----------------------------------------------------------------------------------\n")
+            print("-----------------------------------------------------------------------------------")
 
         # Print results of protocol, standard, data rate and more information
-        print("Results are as follows: \nProtocol: " + chosen_protocol + "\nStandard: " + str(
+        print("\nResults are as follows: \nProtocol: " + chosen_protocol + "\nStandard: " + str(
             chosen_standard) + "\nData Rate: %.2f Mbps\nChannel Bandwidth: %d MHz\nNss: %d\nNo. of Channels: %d\nThroughput: %.3f Mbps\n" % (
                   chosen_data_rate, bandwidth, Nss, NChan, throughput))
         print("The time taken to transfer 10GB of data is: %.2f seconds or %.2f minutes\n" % (

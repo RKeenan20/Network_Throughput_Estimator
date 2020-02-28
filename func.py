@@ -29,12 +29,12 @@ def user_choice():
     chosen_protocol = config.protocol[int(input("Enter choice in numerical form: \n")) - 1]
 
     # Entering a valid 802.11 standard
-    print("Please choose a relevant 802.11 Standard from the below list:")
+    print("\nPlease choose a relevant 802.11 Standard from the below list:")
     print_dict(config.standards, None)
     chosen_standard = list(config.standards)[int(input("Enter choice in numerical form: \n")) - 1]
 
     # Ask the user for input of their chosen 1SS, 20MHz data rate for the chosen standard
-    print("Choose a data rate from the following list:")
+    print("\nChoose a data rate from the following list:")
     print_dict(config.standards[chosen_standard]["Data Rates"], config.standards[chosen_standard])
     # Data rate that the user has selected
     chosen_data_rate = list(config.standards[chosen_standard]["Data Rates"])[
